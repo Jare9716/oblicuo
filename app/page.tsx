@@ -1,103 +1,408 @@
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+import { Card } from "@/components/card";
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+import { Instagram } from "@/components/icons/Instagram";
+import { Facebook } from "@/components/icons/Facebook";
+
+import { portfolio } from "@/libs/placeholder-data";
+
+// Single HTTP image used everywhere (swap this later)
+const IMG = "http://picsum.photos/1200/800";
+
+// Navigation Component - Simplified without Get Quote button
+function Navigation() {
+	return (
+		<nav className="absolute left-0 right-0 top-0 z-50 bg-transparent">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				<div className="flex h-20 items-center justify-between">
+					<div className="text-3xl font-bold tracking-tight text-white drop-shadow-lg">
+						WoodCraft
+					</div>
+					<div className="hidden items-center space-x-8 md:flex">
+						<a
+							href="#portfolio"
+							className="drop-shadow text-white/90 transition-colors hover:text-white font-medium"
+						>
+							Portfolio
+						</a>
+						<a
+							href="#about"
+							className="drop-shadow text-white/90 transition-colors hover:text-white font-medium"
+						>
+							About
+						</a>
+						<a
+							href="#contact"
+							className="drop-shadow text-white/90 transition-colors hover:text-white font-medium"
+						>
+							Contact
+						</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	);
+}
+
+// Hero Section - Full width with text overlay
+function HeroSection() {
+	return (
+		<section
+			id="home"
+			className="relative flex min-h-screen items-center justify-center bg-cover bg-center bg-fixed"
+			style={{ backgroundImage: "url('/livingroom1.jpg')" }}
+		>
+			{/* Overlay for better text readability */}
+			<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80" />
+
+			{/* Content */}
+			<div className="relative z-10 mx-auto max-w-6xl px-6 text-center lg:px-8">
+				<h1 className="mb-8 text-5xl font-bold leading-tight text-white drop-shadow-2xl md:text-6xl lg:text-8xl">
+					Crafting Elegant
+					<br />
+					<span className="text-white/80">Wooden Interiors</span>
+				</h1>
+				<p className="mx-auto max-w-4xl text-xl leading-relaxed text-white/90 drop-shadow-lg md:text-2xl">
+					Bespoke architectural cabinetry that transforms spaces into
+					atmospheric sanctuaries, where every detail reflects your unique
+					vision and lifestyle.
+				</p>
+			</div>
+
+			{/* Scroll indicator */}
+			<div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform animate-bounce">
+				<div className="flex h-10 w-6 justify-center rounded-full border-2 border-white/50">
+					<div className="mt-2 h-3 w-1 animate-pulse rounded-full bg-white/50" />
+				</div>
+			</div>
+		</section>
+	);
+}
+
+// About Section - Without button
+function AboutSection() {
+	return (
+		<section id="about" className="bg-white py-24">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				<div className="grid items-center gap-16 lg:grid-cols-3">
+					<div className="lg:col-span-1">
+						<div className="space-y-6">
+							<div className="text-sm font-semibold uppercase tracking-wider text-black">
+								About Our Studio
+							</div>
+							<h2 className="text-4xl font-bold leading-tight text-black lg:text-5xl">
+								Where Design
+								<br />
+								Meets
+								<br />
+								<span className="text-gray-500">Craftsmanship</span>
+							</h2>
+						</div>
+					</div>
+
+					<div className="space-y-8 lg:col-span-2">
+						<p className="text-xl leading-relaxed text-gray-600">
+							Our bespoke wooden interiors are crafted with precision and care,
+							ensuring a perfect blend of functionality and aesthetics that
+							transforms houses into homes.
+						</p>
+						<div className="grid gap-8 md:grid-cols-2">
+							<div>
+								<h4 className="mb-3 font-semibold text-black">
+									Australian Heritage
+								</h4>
+								<p className="text-gray-600">
+									Proudly serving Australian homes with locally sourced
+									materials and traditional craftsmanship techniques.
+								</p>
+							</div>
+							<div>
+								<h4 className="mb-3 font-semibold text-black">
+									Established Excellence
+								</h4>
+								<p className="text-gray-600">
+									Over 18 years of creating atmospheric interiors that stand the
+									test of time.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
+
+// Portfolio Gallery
+function PortfolioGallery() {
+	const portfolioImages = Array(9).fill(IMG);
+
+	return (
+		<section id="portfolio" className="bg-gray-50 py-24">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				<div className="mb-16 text-center">
+					<div className="mb-4 text-sm font-semibold uppercase tracking-wider text-black">
+						Our Portfolio
+					</div>
+					<h2 className="mb-6 text-4xl font-bold text-black lg:text-5xl">
+						Crafted with Precision
+					</h2>
+					<p className="mx-auto max-w-3xl text-xl text-gray-600">
+						Every piece tells a story of meticulous craftsmanship and attention
+						to detail
+					</p>
+				</div>
+
+				<div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+					{portfolio.map((portfolio, index) => (
+						<div
+							key={index}
+							className="group relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+						>
+							<Image
+								className="h-full w-full bg-cover bg-center"
+								fill={true}
+								src={portfolio.url}
+								alt={portfolio.name}
+								style={{ objectFit: "cover" }}
+							/>
+
+							<div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20" />
+							<div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+								<Card className="border-0 bg-white/95 p-4 backdrop-blur-lg">
+									<h4 className="font-semibold text-black">{portfolio.name}</h4>
+									<p className="text-sm text-gray-600">
+										{portfolio.description}
+									</p>
+								</Card>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
+}
+
+// Feature Section - Without button
+function FeatureSection() {
+	return (
+		<section className="bg-white py-24">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				<div className="grid items-center gap-16 lg:grid-cols-2">
+					<div className="space-y-8">
+						<div>
+							<div className="mb-4 text-sm font-semibold uppercase tracking-wider text-black">
+								Our Process
+							</div>
+							<h2 className="mb-6 text-4xl font-bold leading-tight text-black lg:text-5xl">
+								Innovative Designs,
+								<br />
+								<span className="text-gray-500">Timeless Craft</span>
+							</h2>
+							<p className="text-xl leading-relaxed text-gray-600">
+								Our bespoke wooden interiors are crafted with precision and
+								care, ensuring a perfect blend of functionality and aesthetics
+								that creates the perfect atmosphere for your home.
+							</p>
+						</div>
+
+						<div className="space-y-6">
+							<div className="flex items-start space-x-4">
+								<div className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-semibold text-white">
+									1
+								</div>
+								<div>
+									<h4 className="mb-2 font-semibold text-black">
+										Design Consultation
+									</h4>
+									<p className="text-gray-600">
+										We understand your vision and space requirements
+									</p>
+								</div>
+							</div>
+							<div className="flex items-start space-x-4">
+								<div className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-semibold text-white">
+									2
+								</div>
+								<div>
+									<h4 className="mb-2 font-semibold text-black">
+										Custom Design
+									</h4>
+									<p className="text-gray-600">
+										Detailed plans tailored to your specific needs
+									</p>
+								</div>
+							</div>
+							<div className="flex items-start space-x-4">
+								<div className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-sm font-semibold text-white">
+									3
+								</div>
+								<div>
+									<h4 className="mb-2 font-semibold text-black">
+										Expert Craftsmanship
+									</h4>
+									<p className="text-gray-600">
+										Handcrafted with premium materials and techniques
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="relative">
+						<div className="aspect-[4/5] overflow-hidden rounded-3xl bg-cover bg-center shadow-2xl">
+							<Image
+								className="rounded-3xl bg-cover bg-center"
+								fill={true}
+								src={"/livingroom2.jpg"}
+								alt={"wood plans"}
+								style={{ objectFit: "cover" }}
+							/>
+							<div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
+
+// Contact Section with Social Media Icons
+function ContactSection() {
+	return (
+		<section id="contact" className="bg-black py-24 text-white">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				<div className="mb-16 text-center">
+					<h2 className="mb-6 text-4xl font-bold lg:text-5xl">
+						Ready to Create Your Dream Space?
+					</h2>
+					<p className="mx-auto mb-12 max-w-3xl text-xl text-gray-300">
+						Get in touch with us to discuss your project and discover how we can
+						transform your vision into reality.
+					</p>
+
+					{/* Social Media Icons */}
+					<div className="flex items-center justify-center gap-8">
+						<a
+							href="https://facebook.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+						>
+							<Facebook className="h-8 w-8 transition-transform group-hover:scale-110" />
+						</a>
+
+						<a
+							href="https://instagram.com"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+						>
+							<Instagram className="h-8 w-8 transition-transform group-hover:scale-110" />
+						</a>
+						{/* 
+						<a
+							href="mailto:hello@woodcraft.com.au"
+							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+						>
+							<Mail className="h-8 w-8 transition-transform group-hover:scale-110" />
+						</a> */}
+
+						{/* <a
+							href="tel:+61234567890"
+							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+						>
+							<Phone className="h-8 w-8 transition-transform group-hover:scale-110" />
+						</a> */}
+					</div>
+				</div>
+
+				<div className="space-y-6 text-center">
+					<div>
+						<h3 className="mb-4 text-2xl font-semibold">Get Started Today</h3>
+						<p className="mx-auto max-w-2xl leading-relaxed text-gray-300">
+							Whether you're planning a complete home renovation or looking for
+							custom cabinetry solutions, we're here to help bring your vision
+							to life with our expert craftsmanship.
+						</p>
+					</div>
+
+					<div className="flex flex-col items-center justify-center gap-8 pt-8 md:flex-row">
+						<div className="flex items-center space-x-3">
+							<div className="h-2 w-2 rounded-full bg-white" />
+							<span className="text-gray-300">
+								Free consultation and design quote
+							</span>
+						</div>
+						<div className="flex items-center space-x-3">
+							<div className="h-2 w-2 rounded-full bg-white" />
+							<span className="text-gray-300">
+								Premium Australian materials
+							</span>
+						</div>
+						<div className="flex items-center space-x-3">
+							<div className="h-2 w-2 rounded-full bg-white" />
+							<span className="text-gray-300">
+								Expert craftsmanship guarantee
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
+}
+
+// Footer
+function Footer() {
+	return (
+		<footer className="bg-gray-900 py-12 text-white">
+			<div className="mx-auto max-w-7xl px-6 lg:px-8">
+				<div className="flex flex-col items-center justify-between md:flex-row">
+					<div className="mb-4 md:mb-0">
+						<div className="mb-2 text-2xl font-bold">WoodCraft</div>
+						<p className="text-gray-400">
+							© 2023 WoodCraft. All rights reserved.
+						</p>
+					</div>
+					<div className="flex space-x-6">
+						<a
+							href="#"
+							className="text-gray-400 transition-colors hover:text-white"
+						>
+							Privacy Policy
+						</a>
+						<a
+							href="#"
+							className="text-gray-400 transition-colors hover:text-white"
+						>
+							Terms of Service
+						</a>
+						<a
+							href="#contact"
+							className="text-gray-400 transition-colors hover:text-white"
+						>
+							Contact
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	);
+}
+
+export default function ProfessionalCabinetryLanding() {
+	return (
+		<div className="min-h-screen bg-white">
+			<Navigation />
+			<HeroSection />
+			<AboutSection />
+			<PortfolioGallery />
+			<FeatureSection />
+			<ContactSection />
+			<Footer />
+		</div>
+	);
 }
