@@ -2,8 +2,7 @@ import Image from "next/image";
 
 import { Card } from "@/components/card";
 
-import { Instagram } from "@/components/icons/Instagram";
-import { Facebook } from "@/components/icons/Facebook";
+import { Instagram, Facebook, Mail } from "@/components/icons";
 
 import { portfolio } from "@/libs/placeholder-data";
 
@@ -16,8 +15,15 @@ function Navigation() {
 		<nav className="absolute left-0 right-0 top-0 z-50 bg-transparent">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="flex h-20 items-center justify-between">
+					<Image
+						width={150}
+						height={150}
+						src={"/OblicuoNameWhite.png"}
+						alt={"Oblicuo"}
+						// style={{ objectFit: "cover" }}
+					/>
 					<div className="text-3xl font-bold tracking-tight text-white drop-shadow-lg">
-						WoodCraft
+						{/* Oblicuo */}
 					</div>
 					<div className="hidden items-center space-x-8 md:flex">
 						<a
@@ -51,7 +57,7 @@ function HeroSection() {
 		<section
 			id="home"
 			className="relative flex min-h-screen items-center justify-center bg-cover bg-center bg-fixed"
-			style={{ backgroundImage: "url('/livingroom1.jpg')" }}
+			style={{ backgroundImage: "url('/livingroom8.jpg')" }}
 		>
 			{/* Overlay for better text readability */}
 			<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80" />
@@ -295,20 +301,22 @@ function ContactSection() {
 						</a>
 
 						<a
-							href="https://instagram.com"
+							href="https://www.instagram.com/oblicuo_australia/?utm_source=ig_web_button_share_sheet"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
 						>
 							<Instagram className="h-8 w-8 transition-transform group-hover:scale-110" />
 						</a>
-						{/* 
+
 						<a
-							href="mailto:hello@woodcraft.com.au"
+							href="https://mail.google.com/mail/?view=cm&to=oblicuoaustralia@gmail.com"
+							target="_blank"
+							rel="noopener noreferrer"
 							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
 						>
 							<Mail className="h-8 w-8 transition-transform group-hover:scale-110" />
-						</a> */}
+						</a>
 
 						{/* <a
 							href="tel:+61234567890"
@@ -362,9 +370,9 @@ function Footer() {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="flex flex-col items-center justify-between md:flex-row">
 					<div className="mb-4 md:mb-0">
-						<div className="mb-2 text-2xl font-bold">WoodCraft</div>
+						<div className="mb-2 text-2xl font-bold">Oblicuo</div>
 						<p className="text-gray-400">
-							© 2023 WoodCraft. All rights reserved.
+							© 2025 Oblicuo. All rights reserved.
 						</p>
 					</div>
 					<div className="flex space-x-6">
