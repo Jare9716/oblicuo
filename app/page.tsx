@@ -1,10 +1,9 @@
 import Image from "next/image";
 
-import { Card } from "@/components/card";
-
-import { Instagram, Facebook, Mail } from "@/components/icons";
-
 import { portfolio } from "@/libs/placeholder-data";
+
+import { Card } from "@/components/card";
+import { Instagram, Facebook, Mail, Oblicuo } from "@/components/icons";
 
 // Single HTTP image used everywhere (swap this later)
 const IMG = "http://picsum.photos/1200/800";
@@ -12,35 +11,29 @@ const IMG = "http://picsum.photos/1200/800";
 // Navigation Component - Simplified without Get Quote button
 function Navigation() {
 	return (
-		<nav className="absolute left-0 right-0 top-0 z-50 bg-transparent">
+		<nav className="absolute top-0 right-0 left-0 z-50 bg-transparent">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
-				<div className="flex h-20 items-center justify-between">
-					<Image
-						width={150}
-						height={150}
-						src={"/OblicuoNameWhite.png"}
-						alt={"Oblicuo"}
-						// style={{ objectFit: "cover" }}
-					/>
-					<div className="text-3xl font-bold tracking-tight text-white drop-shadow-lg">
-						{/* Oblicuo */}
+				<div className="flex items-center justify-between pt-6">
+					<div>
+						<Oblicuo className="w-39 text-white" />
 					</div>
+
 					<div className="hidden items-center space-x-8 md:flex">
 						<a
 							href="#portfolio"
-							className="drop-shadow text-white/90 transition-colors hover:text-white font-medium"
+							className="font-medium text-white/90 drop-shadow transition-colors hover:text-white"
 						>
 							Portfolio
 						</a>
 						<a
 							href="#about"
-							className="drop-shadow text-white/90 transition-colors hover:text-white font-medium"
+							className="font-medium text-white/90 drop-shadow transition-colors hover:text-white"
 						>
 							About
 						</a>
 						<a
 							href="#contact"
-							className="drop-shadow text-white/90 transition-colors hover:text-white font-medium"
+							className="font-medium text-white/90 drop-shadow transition-colors hover:text-white"
 						>
 							Contact
 						</a>
@@ -56,15 +49,15 @@ function HeroSection() {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen items-center justify-center bg-cover bg-center bg-fixed"
-			style={{ backgroundImage: "url('/livingroom8.jpg')" }}
+			className="relative flex min-h-screen items-center justify-center bg-cover bg-fixed bg-center"
+			style={{ backgroundImage: "url('/livingroom1.jpg')" }}
 		>
 			{/* Overlay for better text readability */}
 			<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80" />
 
 			{/* Content */}
 			<div className="relative z-10 mx-auto max-w-6xl px-6 text-center lg:px-8">
-				<h1 className="mb-8 text-5xl font-bold leading-tight text-white drop-shadow-2xl md:text-6xl lg:text-8xl">
+				<h1 className="mb-8 text-5xl leading-tight font-bold text-white drop-shadow-2xl md:text-6xl lg:text-8xl">
 					Crafting Elegant
 					<br />
 					<span className="text-white/80">Wooden Interiors</span>
@@ -94,10 +87,10 @@ function AboutSection() {
 				<div className="grid items-center gap-16 lg:grid-cols-3">
 					<div className="lg:col-span-1">
 						<div className="space-y-6">
-							<div className="text-sm font-semibold uppercase tracking-wider text-black">
+							<div className="text-sm font-semibold tracking-wider text-black uppercase">
 								About Our Studio
 							</div>
-							<h2 className="text-4xl font-bold leading-tight text-black lg:text-5xl">
+							<h2 className="text-4xl leading-tight font-bold text-black lg:text-5xl">
 								Where Design
 								<br />
 								Meets
@@ -148,7 +141,7 @@ function PortfolioGallery() {
 		<section id="portfolio" className="bg-gray-50 py-24">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="mb-16 text-center">
-					<div className="mb-4 text-sm font-semibold uppercase tracking-wider text-black">
+					<div className="mb-4 text-sm font-semibold tracking-wider text-black uppercase">
 						Our Portfolio
 					</div>
 					<h2 className="mb-6 text-4xl font-bold text-black lg:text-5xl">
@@ -175,7 +168,7 @@ function PortfolioGallery() {
 							/>
 
 							<div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20" />
-							<div className="absolute bottom-4 left-4 right-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+							<div className="absolute right-4 bottom-4 left-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
 								<Card className="border-0 bg-white/95 p-4 backdrop-blur-lg">
 									<h4 className="font-semibold text-black">{portfolio.name}</h4>
 									<p className="text-sm text-gray-600">
@@ -199,10 +192,10 @@ function FeatureSection() {
 				<div className="grid items-center gap-16 lg:grid-cols-2">
 					<div className="space-y-8">
 						<div>
-							<div className="mb-4 text-sm font-semibold uppercase tracking-wider text-black">
+							<div className="mb-4 text-sm font-semibold tracking-wider text-black uppercase">
 								Our Process
 							</div>
-							<h2 className="mb-6 text-4xl font-bold leading-tight text-black lg:text-5xl">
+							<h2 className="mb-6 text-4xl leading-tight font-bold text-black lg:text-5xl">
 								Innovative Designs,
 								<br />
 								<span className="text-gray-500">Timeless Craft</span>
@@ -266,7 +259,7 @@ function FeatureSection() {
 								alt={"wood plans"}
 								style={{ objectFit: "cover" }}
 							/>
-							<div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl" />
+							<div className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/30 to-transparent" />
 						</div>
 					</div>
 				</div>
@@ -370,7 +363,7 @@ function Footer() {
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
 				<div className="flex flex-col items-center justify-between md:flex-row">
 					<div className="mb-4 md:mb-0">
-						<div className="mb-2 text-2xl font-bold">Oblicuo</div>
+						<Oblicuo className="mb-2 w-30 text-white" />
 						<p className="text-gray-400">
 							© 2025 Oblicuo. All rights reserved.
 						</p>
