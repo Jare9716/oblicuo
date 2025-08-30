@@ -5,9 +5,6 @@ import { portfolio } from "@/libs/placeholder-data";
 import { Card } from "@/components/card";
 import { Instagram, Facebook, Mail, Oblicuo } from "@/components/icons";
 
-// Single HTTP image used everywhere (swap this later)
-const IMG = "http://picsum.photos/1200/800";
-
 // Navigation Component - Simplified without Get Quote button
 function Navigation() {
 	return (
@@ -135,8 +132,6 @@ function AboutSection() {
 
 // Portfolio Gallery
 function PortfolioGallery() {
-	const portfolioImages = Array(9).fill(IMG);
-
 	return (
 		<section id="portfolio" className="bg-gray-50 py-24">
 			<div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -324,9 +319,9 @@ function ContactSection() {
 					<div>
 						<h3 className="mb-4 text-2xl font-semibold">Get Started Today</h3>
 						<p className="mx-auto max-w-2xl leading-relaxed text-gray-300">
-							Whether you're planning a complete home renovation or looking for
-							custom cabinetry solutions, we're here to help bring your vision
-							to life with our expert craftsmanship.
+							{
+								"Whether you're planning a complete home renovation or looking for custom cabinetry solutions, we're here to help bring your vision to life with our expert craftsmanship."
+							}
 						</p>
 					</div>
 
