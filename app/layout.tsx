@@ -1,16 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+
 import "./globals.css";
-
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
+import { geistSans, geistMono } from "@/libs/fonts";
 
 export const metadata: Metadata = {
 	title: "Oblicuo | Architectural Cabinetry in Melbourne",
@@ -37,13 +28,13 @@ export const metadata: Metadata = {
 		siteName: "Oblicuo",
 		locale: "en_AU",
 		type: "website",
-		// images: [
-		// 	{
-		// 		url: "https://oblicuo.vercel.app/opengraph-image.png",
-		// 		width: 1200,
-		// 		height: 630,
-		// 	},
-		// ],
+		images: [
+			{
+				url: "https://oblicuo.vercel.app/opengraph-image.png",
+				width: 1200,
+				height: 630,
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
@@ -51,11 +42,11 @@ export const metadata: Metadata = {
 		description:
 			"Luxury, custom cabinetry and furniture for modern Australian homes.",
 		creator: "@Oblicuo",
-		// images: ["https://oblicuo.vercel.app/opengraph-image.png"],
+		images: ["https://oblicuo.vercel.app/opengraph-image.png"],
 	},
-	// icons: {
-	// 	icon: "/favicon.ico",
-	// },
+	icons: {
+		icon: "/favicon.ico",
+	},
 };
 
 export default function RootLayout({
