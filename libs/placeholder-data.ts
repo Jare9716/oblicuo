@@ -39,11 +39,11 @@ export const portfolio: PortfolioProps[] = [
 	{
 		name: "name",
 		description: "loremipsum",
-		url: "/osama.jpg",
+		url: "/livingroom2.jpg",
 	},
 	{
 		name: "name",
 		description: "loremipsum",
-		url: "/osama.jpg",
+		url: "/livingroom2.jpg",
 	},
 ];

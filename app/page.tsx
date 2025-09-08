@@ -118,7 +118,7 @@ function AboutSection() {
 									Established Excellence
 								</h4>
 								<p className="text-gray-600">
-									Over 18 years of creating atmospheric interiors that stand the
+									Over 7 years of creating atmospheric interiors that stand the
 									test of time.
 								</p>
 							</div>
