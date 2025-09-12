@@ -47,7 +47,7 @@ function HeroSection() {
 		<section
 			id="home"
 			className="relative flex min-h-screen items-center justify-center bg-cover bg-fixed bg-center"
-			style={{ backgroundImage: "url('/livingroom1.jpg')" }}
+			style={{ backgroundImage: "url('/livingroom1.png')" }}
 		>
 			{/* Overlay for better text readability */}
 			<div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/80" />
@@ -156,7 +156,8 @@ function PortfolioGallery() {
 						>
 							<Image
 								className="h-full w-full bg-cover bg-center"
-								fill={true}
+								width={1024}
+								height={768}
 								src={portfolio.url}
 								alt={portfolio.name}
 								style={{ objectFit: "cover" }}
@@ -164,7 +165,7 @@ function PortfolioGallery() {
 
 							<div className="absolute inset-0 bg-black/0 transition-all duration-300 group-hover:bg-black/20" />
 							<div className="absolute right-4 bottom-4 left-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-								<Card className="border-0 bg-white/95 p-4 backdrop-blur-lg">
+								<Card className="gap-3 border-0 bg-white/95 p-4 backdrop-blur-lg">
 									<h4 className="font-semibold text-black">{portfolio.name}</h4>
 									<p className="text-sm text-gray-600">
 										{portfolio.description}
