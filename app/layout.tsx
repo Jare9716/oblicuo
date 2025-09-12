@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 		"minimalist cabinetry",
 		"high-end furniture Australia",
 	],
-	metadataBase: new URL("https://oblicuo.vercel.app"),
+	metadataBase: new URL("https://www.oblicuo.com.au/"),
 	alternates: {
 		canonical: "/",
 	},
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: "https://oblicuo.vercel.app/opengraph-image.png",
+				url: "https://www.oblicuo.com.au//opengraph-image.png",
 				width: 1200,
 				height: 1200,
 			},
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 		description:
 			"Luxury, custom cabinetry and furniture for modern Australian homes.",
 		creator: "@Oblicuo",
-		images: ["https://oblicuo.vercel.app/opengraph-image.png"],
+		images: ["https://www.oblicuo.com.au//opengraph-image.png"],
 	},
 	icons: {
 		icon: "/favicon.ico",
