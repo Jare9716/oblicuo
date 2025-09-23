@@ -3,12 +3,14 @@ import { PortfolioProps } from "@/types/portafolio";
 export const portfolio: PortfolioProps[] = [
 	{
 		name: "name",
-		description: "loremipsum",
+		description:
+			"From engineered drawings to final installation, our method protects proportion, alignment and material honesty, so the finished piece looks effortless and lives beautifully.",
 		url: "/livingroom2.jpg",
 	},
 	{
 		name: "name",
-		description: "loremipsum",
+		description:
+			"Quiet luxury, lit from within—an Oblicuo wardrobe with integrated warm LEDs and perfectly aligned, handleless fronts.",
 		url: "/livingroom3.png",
 	},
 	{
@@ -38,14 +40,12 @@ export const portfolio: PortfolioProps[] = [
 	},
 	{
 		name: "name",
-		description:
-			" From engineered drawings to final installation, our method protects proportion, alignment and material honesty, so the finished piece looks effortless and lives beautifully.",
+		description: "loremipsum",
 		url: "/livingroom9.png",
 	},
 	{
 		name: "name",
-		description:
-			"Quiet luxury, lit from within—an Oblicuo wardrobe with integrated warm LEDs and perfectly aligned, handleless fronts.",
+		description: "loremipsum",
 		url: "/livingroom10.png",
 	},
 ];

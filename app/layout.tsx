@@ -45,7 +45,18 @@ export const metadata: Metadata = {
 		images: ["https://www.oblicuo.com.au//opengraph-image.png"],
 	},
 	icons: {
-		icon: "/favicon.ico",
+		icon: [
+			{
+				media: "(prefers-color-scheme: light)",
+				url: "/favicon-light.ico",
+				href: "/favicon-light.ico",
+			},
+			{
+				media: "(prefers-color-scheme: dark)",
+				url: "/favicon-dark.ico",
+				href: "/favicon-dark.ico",
+			},
+		],
 	},
 };
 
