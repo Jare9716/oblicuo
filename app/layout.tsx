@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import "./globals.css";
-import { geistSans, geistMono } from "@/libs/fonts";
+import "@/styles/globals.css";
+import { geistSans, geistMono } from "@/styles/fonts";
 
 export const metadata: Metadata = {
 	title: "Oblicuo | Architectural Cabinetry in Melbourne",

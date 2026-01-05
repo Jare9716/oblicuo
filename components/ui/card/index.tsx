@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "@/libs/utils";
+import { cn } from "@/utils/className";
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
 	return (
@@ -8,7 +8,7 @@ function Card({ className, ...props }: React.ComponentProps<"div">) {
 			data-slot="card"
 			className={cn(
 				"bg-card text-card-foreground flex flex-col gap-6 rounded-xl border",
-				className
+				className,
 			)}
 			{...props}
 		/>

@@ -1,4 +1,4 @@
-import { PortfolioProps } from "@/types/portafolio";
+import { PortfolioProps } from "@/models/types";
 
 export const portfolio: PortfolioProps[] = [
 	{
