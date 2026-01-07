@@ -1,6 +1,4 @@
-import Image from "next/image";
-
-import { Instagram, Facebook, Mail } from "@/components/icons";
+import { Instagram, Facebook, Mail, Phone } from "@/components/icons";
 
 export function Contact() {
 	return (
@@ -17,14 +15,19 @@ export function Contact() {
 
 					<div className="flex items-center justify-center gap-8">
 						<a
-							href="https://facebook.com"
+							href="tel:+61415482476"
+							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
+						>
+							<Phone className="h-8 w-8 transition-transform group-hover:scale-110" />
+						</a>
+						<a
+							href="mailto:design@oblicuo.com"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
 						>
-							<Facebook className="h-8 w-8 transition-transform group-hover:scale-110" />
+							<Mail className="h-8 w-8 transition-transform group-hover:scale-110" />
 						</a>
-
 						<a
 							href="https://www.instagram.com/oblicuo_australia/?utm_source=ig_web_button_share_sheet"
 							target="_blank"
@@ -33,22 +36,14 @@ export function Contact() {
 						>
 							<Instagram className="h-8 w-8 transition-transform group-hover:scale-110" />
 						</a>
-
-						<a
-							href="mailto:oblicuoaustralia@gmail.com"
+						{/* <a
+							href="https://facebook.com"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
 						>
-							<Mail className="h-8 w-8 transition-transform group-hover:scale-110" />
-						</a>
-
-						{/* <a
-                            href="tel:+61234567890"
-                            className="group flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm transition-all duration-300 hover:bg-white hover:text-black"
-                        >
-                            <Phone className="h-8 w-8 transition-transform group-hover:scale-110" />
-                        </a> */}
+							<Facebook className="h-8 w-8 transition-transform group-hover:scale-110" />
+						</a> */}
 					</div>
 				</div>
 

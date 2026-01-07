@@ -15,6 +15,8 @@ export const metadata: Metadata = {
 		"custom furniture Melbourne",
 		"minimalist cabinetry",
 		"high-end furniture Australia",
+		"cabinet makers",
+		"high end cabinet makers",
 	],
 	metadataBase: new URL("https://www.oblicuo.com.au/"),
 	alternates: {
@@ -32,7 +34,7 @@ export const metadata: Metadata = {
 			{
 				url: "https://www.oblicuo.com.au//opengraph-image.png",
 				width: 1200,
-				height: 1200,
+				height: 630,
 			},
 		],
 	},
