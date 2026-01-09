@@ -1,12 +1,19 @@
+import Image from "next/image";
+
 export function Hero() {
 	return (
 		<section
 			id="home"
 			className="relative flex min-h-screen items-center justify-center bg-cover bg-fixed bg-center"
-			style={{ backgroundImage: "url('/livingroom1.png')" }}
 		>
+			<Image
+				src={"/livingroom1.png"}
+				alt="Background image"
+				fill
+				className="object-cover"
+				sizes="100vw"
+			/>
 			<div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/50 to-black/80" />
-
 			<div className="relative z-10 mx-auto max-w-6xl px-6 text-center lg:px-8">
 				<h1 className="mb-8 text-5xl leading-tight font-bold text-white drop-shadow-2xl md:text-6xl lg:text-8xl">
 					Crafting Elegant
